@@ -1,14 +1,50 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://dvlyhuf4uyjqv" path="res://scenes/player.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://dkorqusv8vo70" path="res://scenes/Title.tscn" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://c20a8sc5et0bc" path="res://scenes/tomori.tscn" id="4_rarhs"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
-position = Vector2(296, 324)
+position = Vector2(178, 610)
 
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
-position = Vector2(856, 324)
+position = Vector2(882, 610)
 
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
-position = Vector2(576, 394)
+position = Vector2(530, 610)
+
+[node name="Ground6" parent="." unique_id=769985710 instance=ExtResource("1_elqb8")]
+position = Vector2(107, 188)
+
+[node name="Ground9" parent="." unique_id=1528682645 instance=ExtResource("1_elqb8")]
+position = Vector2(-35, -25)
+rotation = 1.5707964
+
+[node name="Ground4" parent="." unique_id=3529349 instance=ExtResource("1_elqb8")]
+position = Vector2(-35, 400)
+rotation = 1.5707964
+
+[node name="Ground5" parent="." unique_id=414508838 instance=ExtResource("1_elqb8")]
+position = Vector2(582, 319)
+
+[node name="Ground7" parent="." unique_id=415552568 instance=ExtResource("1_elqb8")]
+position = Vector2(1133, 425)
+
+[node name="Ground10" parent="." unique_id=154158758 instance=ExtResource("1_elqb8")]
+position = Vector2(1191, 122)
+rotation = 1.5707964
+
+[node name="Ground8" parent="." unique_id=1771890106 instance=ExtResource("1_elqb8")]
+position = Vector2(1191, 475)
+rotation = 1.5707964
+
+[node name="Node2D" parent="." unique_id=1186995115 instance=ExtResource("4_rarhs")]
+position = Vector2(62, 80)
+
+[node name="Player" parent="." unique_id=1722690126 instance=ExtResource("2_rvslj")]
+position = Vector2(70, 485)
+
+[node name="CanvasLayer" parent="." unique_id=732768631 instance=ExtResource("3_0bbpv")]

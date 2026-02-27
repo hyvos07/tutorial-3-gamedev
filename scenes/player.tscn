@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dvlyhuf4uyjqv"]
+
+[ext_resource type="Script" uid="uid://ccnt6deyykprd" path="res://scenes/Player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bkpt0drvjiw2q" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_stand.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dn3pn4n68yum0" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_walk1.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c724pmaxk7ulp" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_duck.png" id="2_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://c0hm32boewu4s" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_walk2.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://cmsjbwre2qnca" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_fall.png" id="3_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://bdyrwy3t8kee6" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_idle.png" id="4_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://bj64xivvrmw4h" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_jump.png" id="6_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://d2r7ebawgrnba" path="res://assets/kenney_platformercharacters/PNG/Soldier/Poses/soldier_slide.png" id="7_jej6c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ur7pv")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y4r1p")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_d2wvv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3v2ag")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jej6c")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2els")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qhqgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dqkch")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(74, 88)
+
+[node name="Player" type="CharacterBody2D" unique_id=1722690126]
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1566751102]
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744268982]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_g2els")

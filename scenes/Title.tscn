@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dkorqusv8vo70"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=732768631]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2008293918]
+
+[node name="Label" type="RichTextLabel" parent="Node2D" unique_id=291694895]
+offset_left = 43.0
+offset_top = 336.0
+offset_right = 283.0
+offset_bottom = 383.0
+bbcode_enabled = true
+text = "[font_size=32][b]Save Tomori!![/b][/font_size]"
+horizontal_alignment = 1

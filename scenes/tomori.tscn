@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c20a8sc5et0bc"]
+
+[ext_resource type="Script" uid="uid://bx0b5a7uaxb8b" path="res://scenes/tomori.gd" id="1_d07p6"]
+[ext_resource type="Texture2D" uid="uid://3t4mxf8bg18l" path="res://assets/tomori_stressed.png" id="1_ndx2k"]
+[ext_resource type="Script" uid="uid://cdl2yv4pnxeh1" path="res://scenes/tomorii.gd" id="1_ous21"]
+[ext_resource type="Texture2D" uid="uid://q5tci80n8jfg" path="res://assets/tomori_happy.png" id="2_d07p6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ous21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndx2k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d07p6")
+}],
+"loop": true,
+"name": &"winning",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndx2k"]
+size = Vector2(107, 136)
+
+[node name="Node2D" type="Node2D" unique_id=1186995115]
+script = ExtResource("1_ous21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=573704307]
+scale = Vector2(0.42276424, 0.42276418)
+sprite_frames = SubResource("SpriteFrames_ous21")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1062639654]
+script = ExtResource("1_d07p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124232493]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ndx2k")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
