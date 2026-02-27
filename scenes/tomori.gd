@@ -4,6 +4,7 @@ extends Area2D
 
 var _victory_shown := false
 
+
 func _show_victory_and_transition():
 	var player = get_tree().current_scene.find_child(player_obj, true, false)
 	if player:

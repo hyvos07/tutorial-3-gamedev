@@ -9,11 +9,7 @@ extends CharacterBody2D
 @export var dodge_cooldown: float = 0.35
 @export var dodge_double_tap_window: float = 0.5  # under this interval == dodge
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-var _movement_locked := false
-
-var jumps_used: int = 0			# keeping info about jumping
+var jumps_used: int = 0  # keeping info about jumping
 var facing_right: bool = true
 var is_crouching: bool = false
 var is_sprinting: bool = false
@@ -25,6 +21,10 @@ var dodge_time_left: float = 0.0
 var dodge_cooldown_left: float = 0.0
 var last_shift_tap_time: float = -100.0
 var dodge_requested: bool = false
+
+var _movement_locked := false
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
@@ -61,7 +61,9 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = not facing_right
 
 	is_crouching = is_on_floor() and Input.is_action_pressed("ui_down")
-	is_sprinting = Input.is_physical_key_pressed(KEY_SHIFT) and not is_crouching and abs(input_dir) > 0.0
+	is_sprinting = (
+		Input.is_physical_key_pressed(KEY_SHIFT) and not is_crouching and abs(input_dir) > 0.0
+	)
 
 	if dodge_requested and _can_start_dodge():
 		_start_dodge(input_dir)
@@ -103,8 +105,8 @@ func _start_dodge(input_dir: float) -> void:
 	else:
 		dodge_direction = 1.0 if facing_right else -1.0
 	animated_sprite.flip_h = dodge_direction < 0.0
-	
-	
+
+
 func set_movement_locked(value: bool):
 	_movement_locked = value
 	if _movement_locked:
